@@ -1,0 +1,41 @@
+#!/usr/bin/python3
+
+import unittest
+from matrix_multiplication import matrix_mul
+
+class TestMatrixMultiplication(unittest.TestCase):
+
+    def test_matrix_mul(self):
+        # Test case 1: Matrices with valid input
+        matrix_a = [[1, 2], [3, 4]]
+        matrix_b = [[5, 6], [7, 8]]
+        result = matrix_mul(matrix_a, matrix_b)
+        self.assertEqual(result, [[19, 22], [43, 50]])
+
+        # Add more test cases as needed
+
+    def test_matrix_mul_invalid_input(self):
+        # Test case: Matrices with invalid input
+        with self.assertRaises(TypeError):
+            matrix_mul("not_a_matrix", [[1, 2], [3, 4]])
+
+        # Add more test cases as needed
+
+    def test_matrix_mul_empty_matrix(self):
+        # Test case: Matrices that are empty
+        with self.assertRaises(ValueError):
+            matrix_mul([], [[1, 2], [3, 4]])
+
+        # Add more test cases as needed
+
+    def test_matrix_mul_unable_to_multiply(self):
+        # Test case: Matrices that can't be multiplied
+        matrix_a = [[1, 2], [3, 4]]
+        matrix_b = [[5, 6, 7], [8, 9, 10]]
+        with self.assertRaises(ValueError):
+            matrix_mul(matrix_a, matrix_b)
+
+        # Add more test cases as needed
+
+if __name__ == '__main__':
+    unittest.main()

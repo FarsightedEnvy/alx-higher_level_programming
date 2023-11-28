@@ -1,0 +1,17 @@
+# Test cases for text_indentation function
+
+# Test case 1: Text with multiple sentences
+>>> text_indentation("This is a sentence. Another sentence? Yes, it is.")
+This is a sentence
+Another sentence
+Yes, it is
+
+# Test case 2: Text with only one sentence
+>>> text_indentation("A single sentence.")
+A single sentence
+
+# Test case 3: Invalid input (text is not a string)
+>>> text_indentation(123)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
