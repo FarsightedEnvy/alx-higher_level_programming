@@ -43,27 +43,22 @@ class Rectangle:
 
     def area(self):
         """Return the area of the Rectangle."""
-        return (self.__width * self.__height)
+        return self.__width * self.__height
 
     def perimeter(self):
         """Return the perimeter of the Rectangle."""
-        if self.__width == 0 or self.__height == 0:
-            return (0)
-        return ((self.__width * 2) + (self.__height * 2))
+        return 2 * (self.__width + self.__height)
 
     def __str__(self):
-        """Return the printable representation of the Rectangle.
-
-        Represents the rectangle with the # character.
-        """
+        """Return a string representation of the Rectangle."""
         if self.__width == 0 or self.__height == 0:
-            return ("")
-
-        rect = []
-        for i in range(self.__height):
-            [rect.append('#') for j in range(self.__width)]
-            if i != self.__height - 1:
-                rect.append("\n")
-        return ("".join(rect))
+            return ""
+        return '#' * self.__width + ('\n' + '#' * self.__width) * (self.__height - 1)
 
     def __repr__(self):
+        """Return a string representation of the Rectangle for recreation."""
+        return f"Rectangle({self.__width}, {self.__height})"
+
+    def __del__(self):
+        """Print a message when an instance of Rectangle is deleted."""
+        print("Bye rectangle...")
