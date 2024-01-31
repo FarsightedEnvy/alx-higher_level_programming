@@ -12,8 +12,6 @@ class Rectangle:
             width (int): The width of the new rectangle.
             height (int): The height of the new rectangle.
         """
-        self.__width = 0
-        self.__height = 0
         self.width = width
         self.height = height
 
@@ -53,10 +51,8 @@ class Rectangle:
 
     def __str__(self):
         """Return a string representation of the Rectangle."""
-        if self.__width == 0 or self.__height == 0:
-            return ""
-        return '#' * self.__width + ('\n' + '#' * self.__width) * (self.__height - 1)
+        return '\n'.join(['#' * self.__width for _ in range(self.__height)])
 
     def __repr__(self):
         """Return a string representation of the Rectangle for recreation."""
-        return f"Rectangle({self.__width}, {self.__height})"
+        return f"Rectangle({self.__width}, {self.__height})""
