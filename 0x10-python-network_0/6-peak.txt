@@ -1,0 +1,21 @@
+Complexity Analysis:
+Time Complexity: O(log(n))
+The binary search approach reduces the search space by half with each comparison, leading to logarithmic time complexity.
+Space Complexity: O(1)
+The algorithm uses only a constant amount of extra space regardless of the input size.
+Documenting Complexity in 6-peak.txt:
+The complexity of the algorithm is O(log(n)) due to its use of binary search principles to efficiently find a peak in the list of integers.
+To clarify the complexity of the algorithm used to find a peak in an unsorted list of integers:
+
+The approach taken utilizes a binary search-like method to efficiently locate a peak element. Here’s the breakdown:
+
+Complexity: O(log(n))
+Explanation:
+Binary Search Approach:
+The algorithm divides the search space in half with each comparison.
+It checks the middle element and decides whether to move left or right based on comparisons with neighboring elements.
+This halving of the search space gives it a logarithmic time complexity.
+Conclusion:
+The algorithm efficiently finds a peak with a time complexity of O(log(n)).
+This complexity is derived from the fact that the algorithm reduces the search space exponentially,
+ making it suitable for large lists of integers while maintaining efficient performance.
